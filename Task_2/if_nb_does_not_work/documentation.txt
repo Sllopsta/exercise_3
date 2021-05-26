@@ -1,0 +1,20 @@
+|   | name           | matrikelnumber |
+|---|----------------|----------------|
+| 1 | Mond Ferdinand | 11945397       |
+| 2 | Poll Thomas    | 01629100       |
+
+
+When we simulate the evolution of the signal with a Courant number of 1, 
+we get a stable simulation and no artificial diffusion which could be
+introduced due to the truncation error.
+
+The stability analysis states that the courant number has to be <= 1 for a
+stable simulation.
+The truncation error is dependent on Constant * (1 - Courant).
+It follows that the error has to be 0 for a courant number of 1.
+
+When we use a courant number smaller than 1 we introduce an artificial
+diffusifity which smoothes out the original pulse.
+The amplitude of the signal goes down and the pulse gets a gaussian shape.
+
+With a courant number of >1 we observe an instable simulation.
